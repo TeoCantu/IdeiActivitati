@@ -5,11 +5,13 @@
 
     <StackLayout>
         <Label Text="Sugestii de activitati pentru zilele ploioase :)"
-                VerticalOptions="CenterAndExpand" 
+                VerticalOptions="Center" 
                 HorizontalOptions="Center" 
-               Padding="10"/>
+               FontSize="Medium"
+               Padding="8"/>
         <Picker x:Name="pickerTipActivitate"
-                    HorizontalOptions="Fill"
+                Title="Tipuri de activitati"
+                    HorizontalOptions="FillAndExpand"
                 SelectedIndexChanged="pickerTipActivitate_SelectedIndexChanged"/>
 
         <CarouselView x:Name="carousel">
@@ -17,12 +19,12 @@
                 <DataTemplate>
                     <StackLayout>
                         <Frame HasShadow="True" BorderColor="DarkBlue"
-                                   CornerRadius="5" Margin="20"
-                                   HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                   CornerRadius="5"
+                                   HorizontalOptions="Center" VerticalOptions="Center">
                             <StackLayout>
                                 <Label Text="{Binding Denumire}"
                                            FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"
-                                       FontSize="Large"/>
+                                       FontSize="Medium"/>
                                 <Image Source="{Binding Imagine}" Aspect="AspectFill"
                                            HorizontalOptions="Center"/>
                                 <Label Text="{Binding Descriere}"

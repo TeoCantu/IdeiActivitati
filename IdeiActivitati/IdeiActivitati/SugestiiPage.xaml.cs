@@ -14,8 +14,7 @@ namespace IdeiActivitati
     public partial class SugestiiPage : ContentPage
     {
         public List<Sugestie> ListaSugestii { get; set; } = new List<Sugestie>();
-        public Sugestie Sugestie { get; set; }
-
+       
         public List<string> TipuriSugestii { get; set; } = new List<string>();
         public SugestiiPage()
         {
@@ -23,7 +22,6 @@ namespace IdeiActivitati
             TipuriSugestii.Add("Filme");
             TipuriSugestii.Add("Carti");
             pickerTipActivitate.ItemsSource = TipuriSugestii;
-            
         }
 
         protected override void OnAppearing()
