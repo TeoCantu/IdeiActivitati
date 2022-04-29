@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IdeiActivitati.GraficPage"
+             Title="Grafic activitati"
+             xmlns:charts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Padding="8">
+                <Label
+                Text="Graficul activitatilor" FontSize="Large"
+                VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                />
+                <Picker x:Name="pickerTipGrafic"
+                    Title="Tip grafic"
+                    VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Fill"
+                        Grid.Row="1" Grid.Column="0"
+                    />
+                <Picker x:Name="pickerDateGrafic"
+                    Title="Date grafic"
+                    VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Fill"
+                        Grid.Row="1" Grid.Column="1"
+                    />
+                <Button Text="Afiseaza grafic"
+                        x:Name="buttonAfiseaza"
+                        Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                        VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Fill"
+                      Clicked="buttonAfiseaza_Clicked"  />
+            </Grid>
+            
+            <charts:ChartView x:Name="chartActivitate"
+                              VerticalOptions="FillAndExpand"
+                              HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -16,6 +16,7 @@ namespace IdeiActivitati
         /*[EnumDataType(typeof(TipActivitate))]*/
         public string Tip { get; set; }
 
+        // tipuri activitati ["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"]
         public int Participanti { get; set; }
 
         public double Cost { get; set; }
@@ -24,9 +25,15 @@ namespace IdeiActivitati
 
         public string DetaliiSuplimentare { get; set; }
 
-        public Activitate()
+        public Activitate(int id, string descriere, string tip, int participanti, double cost, DateTime data, string detaliiSuplimentare)
         {
-
+            Id = id;
+            Descriere = descriere;
+            Tip = tip;
+            Participanti = participanti;
+            Cost = cost;
+            Data = data;
+            DetaliiSuplimentare = detaliiSuplimentare;
         }
     }
 }

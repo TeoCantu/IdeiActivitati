@@ -10,8 +10,10 @@ namespace IdeiActivitati
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
-
+            // aici am pus asa ca sa testez pagina
+            //MainPage = new MainPage();
+            //MainPage = new GraficPage();
+            MainPage = new SugestiiPage();
         }
 
         protected override void OnStart()
