@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IdeiActivitati.SugestiiPage">
+
+    <StackLayout>
+        <Label Text="Sugestii de activitati pentru zilele ploioase :)"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="Center" 
+               Padding="10"/>
+        <Picker x:Name="pickerTipActivitate"
+                    HorizontalOptions="Fill"
+                SelectedIndexChanged="pickerTipActivitate_SelectedIndexChanged"/>
+
+        <CarouselView x:Name="carousel">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame HasShadow="True" BorderColor="DarkBlue"
+                                   CornerRadius="5" Margin="20"
+                                   HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                            <StackLayout>
+                                <Label Text="{Binding Denumire}"
+                                           FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"
+                                       FontSize="Large"/>
+                                <Image Source="{Binding Imagine}" Aspect="AspectFill"
+                                           HorizontalOptions="Center"/>
+                                <Label Text="{Binding Descriere}"
+                                       FontSize="Small"
+                                       VerticalOptions="Center" HorizontalOptions="Fill"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+    </StackLayout>
+</ContentPage>

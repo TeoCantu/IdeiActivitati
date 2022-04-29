@@ -12,7 +12,8 @@ namespace IdeiActivitati
 
             // aici am pus asa ca sa testez pagina
             //MainPage = new MainPage();
-            MainPage = new GraficPage();
+            //MainPage = new GraficPage();
+            MainPage = new SugestiiPage();
         }
 
         protected override void OnStart()
