@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdeiActivitati.Android", "I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdeiActivitati.iOS", "IdeiActivitati\IdeiActivitati.iOS\IdeiActivitati.iOS.csproj", "{AD5C7266-69A0-4FF1-B643-957180618E17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdeiActivitati", "IdeiActivitati\IdeiActivitati\IdeiActivitati.csproj", "{E452B2DE-CAB5-4E69-8D27-522E2A9CE48B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdeiActivitati", "IdeiActivitati\IdeiActivitati\IdeiActivitati.csproj", "{E452B2DE-CAB5-4E69-8D27-522E2A9CE48B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

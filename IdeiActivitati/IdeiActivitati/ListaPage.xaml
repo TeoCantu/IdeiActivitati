@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Activitati desfasurate"
+             x:Class="IdeiActivitati.ListaPage">
+  <StackLayout>
+        <Frame BackgroundColor="#140E2A"  Margin="10"  Padding="10,10,0,0" CornerRadius="10" HasShadow="True">
+            <Label Text="Activitati" HorizontalTextAlignment="Start"  TextColor="White" FontSize="40"/>
+        </Frame>
+        <ListView x:Name="listviewActivitate" Margin="20" HasUnevenRows="True" SeparatorColor="Black" 
+                  SeparatorVisibility="Default" >
+            <ListView.ItemTemplate  >
+                <DataTemplate >
+                    <ViewCell>
+                        <Frame  CornerRadius="10" Padding="0"  Margin="10, 10, 10, 10" HasShadow="True" BackgroundColor="#231F36">
+                            <Grid BackgroundColor="DarkCyan"  ColumnSpacing="30" >
+                                <Label HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1"
+                                       FontSize="15" FontAttributes="Bold" TextColor="White"
+                                       Text="{Binding Descriere}"/>
+                                <Label HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="0"
+                                       FontSize="15" FontAttributes="Bold" TextColor="White"
+                                       Text="{Binding Tip, StringFormat='Tip: {0}'}"/>
+                                <Label HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="2"
+                                       FontSize="15" FontAttributes="Bold" TextColor="White"
+                                       Text="{Binding Participanti, StringFormat='Participanti: {0}'}"/>
+                                <Label HorizontalOptions="CenterAndExpand" Grid.Row="2" Grid.Column="0"
+                                       FontSize="15" FontAttributes="Bold" TextColor="White"
+                                       Text="{Binding Cost, StringFormat='Cost: {0}'}"/>
+                                <Label HorizontalOptions="CenterAndExpand" Grid.Row="2" Grid.Column="2"
+                                       FontSize="15" FontAttributes="Bold" TextColor="White"
+                                       Text="{Binding Data, StringFormat='Data: {0: dd/MM/yyyy}'}"/>
+
+                                <Label HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" VerticalOptions="FillAndExpand"
+                                       FontSize="15" FontAttributes="Bold" TextColor="White"
+                                       Text="{Binding DetaliiSuplimentare, StringFormat='DetaliiSuplimentare: {0}'}"/>
+
+
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+  </StackLayout>
+</ContentPage>

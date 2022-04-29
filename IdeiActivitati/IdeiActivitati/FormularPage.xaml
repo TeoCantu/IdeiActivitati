@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Adaugare activitate"
+             x:Class="IdeiActivitati.FormularPage">
+  <ContentPage.Content>
+        <Frame Margin="100" BackgroundColor="#3c4566" CornerRadius="30">
+            <Grid Padding="30,50,30,50" BackgroundColor="#3c4566">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+
+
+                <Label Text="Denumire activitate"  Grid.Row="0" Grid.Column="0"  TextColor="White"
+                       FontAttributes="Bold"
+                     
+                   FontSize="25"
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+
+                <Entry x:Name="entryDescriere" Grid.Row="0"  Grid.Column="1"
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="Fill"
+                   Text="{Binding DescriereActivitate}"/>
+
+                <Label Text="Tip activitate"  Grid.Row="1" Grid.Column="0"  TextColor="White"
+                       FontAttributes="Bold"
+                     
+                   FontSize="25"
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+
+                <Picker x:Name="pickerTipActivitate" Grid.Row="1" Grid.Column="1" TextColor="White"
+                VerticalOptions="CenterAndExpand" 
+                    SelectedItem="{Binding TipulActivitatii}"
+                HorizontalOptions="Fill" />
+
+                <Label Text="Numar persoane"  Grid.Row="2" Grid.Column="0"  TextColor="White"
+                       FontAttributes="Bold"
+                     
+                   FontSize="25"
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+
+                <Entry x:Name="entryNrPersoane" Grid.Row="2" Grid.Column="1" Placeholder="Numar de persoane"
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="Fill"
+                   Keyboard="Numeric"
+                   Text="{Binding NrPersoane}"/>
+
+                <Label Text="Cost activitate"  Grid.Row="3" Grid.Column="0"  FontSize="27" TextColor="White"
+                       FontAttributes="Bold"
+                     
+                 
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+
+                <Entry x:Name="entryCost" Grid.Row="3" Grid.Column="1" Placeholder="Cost activitate"
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="Fill"
+                   Keyboard="Numeric"
+                   Text="{Binding CostActivitate}"/>
+                <Label Text="Data"  Grid.Row="4" Grid.Column="0"  TextColor="White"
+                       FontAttributes="Bold"
+                     
+                   FontSize="25"
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+
+                <DatePicker x:Name="datePickerData" Grid.Row="4" Grid.Column="1"
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="Fill"
+                        Date="{Binding DataActivitate}" TextColor="White"/>
+
+                <Editor x:Name="entryDetaliiSuplimentare" Grid.Row="5" Grid.ColumnSpan="2" Placeholder="Detalii suplimentare"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="Fill"
+                   Text="{Binding DetaliiSuplimentareActivitate}"/>
+
+                <Button Grid.Row="6"   Text="ADAUGA" Grid.ColumnSpan="2"  TextColor="White"
+                    FontAttributes="Bold"
+                    BorderWidth="0.5"
+                    BorderColor="AliceBlue"
+                    CornerRadius="4"
+                VerticalOptions="CenterAndExpand" 
+                    
+                    BackgroundColor="#1372ED"
+                HorizontalOptions="Fill" 
+                   Clicked="Adaugare_Clicked" />
+
+
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

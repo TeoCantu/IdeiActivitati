@@ -13,6 +13,17 @@ namespace IdeiActivitati
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = this;
+        }
+
+        private void Formular_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync( new FormularPage() );
+        }
+
+        private void Lista_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ListaPage());
         }
     }
 }
