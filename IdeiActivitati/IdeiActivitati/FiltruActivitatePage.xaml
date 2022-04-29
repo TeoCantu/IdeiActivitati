@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IdeiActivitati.FiltruActivitatePage">
+    <ContentPage.Content>
+        <Frame Margin="20"
+               CornerRadius="20"
+               BackgroundColor="LightSkyBlue">
+            <Grid>
+
+                <Label Text="Găsește o nouă activitate!"
+                       Grid.Row="1"
+                       TextColor="White"
+                       Grid.Column="0"
+                       FontAttributes="Bold"
+                       FontSize="Medium"
+                       Grid.ColumnSpan="2"
+                       VerticalOptions="Start"
+                       HorizontalOptions="CenterAndExpand" />
+
+                <StackLayout  Grid.Row="2"
+                              Grid.ColumnSpan="2"
+                              HorizontalOptions="CenterAndExpand"
+                              VerticalOptions="CenterAndExpand"
+                              Orientation="Horizontal">
+                    <Label Text="Tip"
+                           FontAttributes="Bold"
+                           Margin="40"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start" />
+
+                    <Picker x:Name="tipPicker"
+                            Margin="20"
+                            VerticalOptions="Center"
+                            HorizontalOptions="End" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="3"
+                             Grid.ColumnSpan="2"
+                             HorizontalOptions="CenterAndExpand"
+                             VerticalOptions="CenterAndExpand"
+                             Orientation="Horizontal">
+
+                    <Label x:Name="ParticipantiLabel"
+                           FontAttributes="Bold"
+                           Margin="20"
+                           Text="Număr de participanți: "
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start" />
+
+                    <Stepper Minimum="1"
+                             Maximum="5"
+                             x:Name="stepper"
+                             Increment="1"
+                             VerticalOptions="Center"
+                             HorizontalOptions="End"
+                             ValueChanged="stepper_ValueChanged" />
+                </StackLayout>
+
+                <StackLayout  Grid.Row="4"
+                              Grid.ColumnSpan="2"
+                              HorizontalOptions="CenterAndExpand"
+                              VerticalOptions="CenterAndExpand"
+                              Orientation="Horizontal">
+                    <Label Text="Activitate Gratuită"
+                           FontAttributes="Bold"
+                           Margin="20"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="CenterAndExpand" />
+
+                    <CheckBox x:Name="CheckBox"
+                              Margin="25"
+                              VerticalOptions="CenterAndExpand"
+                              HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+
+                <Button Grid.Row="5"
+                        Grid.Column="0"
+                        Text="Caută"
+                        CornerRadius="20"
+                        FontAttributes="Bold"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="FloralWhite"
+                        VerticalOptions="CenterAndExpand"
+                        Clicked="GasesteButton_Clicked"
+                        HorizontalOptions="Fill" />
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

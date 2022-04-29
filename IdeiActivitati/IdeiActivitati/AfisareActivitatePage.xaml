@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IdeiActivitati.AfisareActivitatePage">
+    <ContentPage.Content>
+        <Frame  Margin="20"
+                CornerRadius="20"
+                BackgroundColor="DodgerBlue">
+            <StackLayout Orientation="Vertical">
+                <Grid x:Name="gridActivitate">
+                    <Label Text="Activitate nouă găsită!"
+                           Grid.Row="0"
+                           TextColor="White"
+                           Grid.Column="0"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           Grid.ColumnSpan="2"
+                           VerticalOptions="Start"
+                           HorizontalOptions="CenterAndExpand" />
+
+                    <Frame BorderColor="DarkBlue"
+                           BackgroundColor="White"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="2"
+                           VerticalOptions="Start"
+                           HorizontalOptions="CenterAndExpand"
+                           Grid.Row="1">
+                        <Label x:Name="ActivitateLabel"
+                               Text="Activitate"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               FontSize="Small"
+                               VerticalOptions="Start"
+                               HorizontalOptions="CenterAndExpand" />
+                    </Frame>
+
+                    <Label x:Name="TipLabel"
+                           Text="Tip"
+                           Grid.Row="2"
+                           TextColor="White"
+                           Grid.Column="0"
+                           FontAttributes="Bold"
+                           FontSize="Small"
+                           Grid.ColumnSpan="2"
+                           VerticalOptions="Start"
+                           HorizontalOptions="CenterAndExpand" />
+
+                    <Label x:Name="ParticipantiLabel"
+                           Text="Participanti"
+                           Grid.Row="3"
+                           TextColor="White"
+                           Grid.Column="0"
+                           FontAttributes="Bold"
+                           FontSize="Small"
+                           Grid.ColumnSpan="2"
+                           VerticalOptions="Start"
+                           HorizontalOptions="CenterAndExpand" />
+
+                    <Label Text="Pret"
+                           x:Name="PretLabel"
+                           Grid.Row="4"
+                           TextColor="White"
+                           Grid.Column="0"
+                           FontAttributes="Bold"
+                           FontSize="Small"
+                           Grid.ColumnSpan="2"
+                           VerticalOptions="Start"
+                           HorizontalOptions="CenterAndExpand" />
+
+                    <StackLayout Orientation="Horizontal"
+                                 Grid.Row="5">
+                        <Button Text="Activitate realizată!"
+                                VerticalOptions="Center"
+                                HorizontalOptions="CenterAndExpand"
+                                CornerRadius="10"
+                                FontAttributes="Bold"
+                                BackgroundColor="White">
+                        </Button>
+
+                        <Button Text="Reîncearcă"
+                                VerticalOptions="Center"
+                                FontAttributes="Bold"
+                                BackgroundColor="White"
+                                HorizontalOptions="CenterAndExpand"
+                                CornerRadius="10">
+                        </Button>
+
+                        <Button Text="Schimbă filtrele"
+                                VerticalOptions="Center"
+                                FontAttributes="Bold"
+                                BackgroundColor="White"
+                                HorizontalOptions="CenterAndExpand"
+                                CornerRadius="10">
+
+                        </Button>
+                    </StackLayout>
+                </Grid>
+
+                <Grid x:Name="eroareGrid">
+                    <Label Text="Ups.. Nicio activitate nu corespunde filtrelor!"
+                           Grid.Row="2"
+                           TextColor="White"
+                           Grid.Column="0"
+                           FontAttributes="Bold"
+                           FontSize="Small"
+                           Grid.ColumnSpan="2"
+                           VerticalOptions="Start"
+                           HorizontalOptions="CenterAndExpand">
+
+                    </Label>
+                    <Button Text="Reîncearcă"
+                            Grid.Column="0"
+                            Grid.Row="4"
+                            FontAttributes="Bold"
+                            BackgroundColor="White"
+                            VerticalOptions="Center"
+                            HorizontalOptions="CenterAndExpand"
+                            CornerRadius="10">
+                    </Button>
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
