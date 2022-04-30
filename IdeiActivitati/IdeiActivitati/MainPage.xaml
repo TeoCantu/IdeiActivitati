@@ -1,31 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IdeiActivitati.MainPage">
+             x:Class="IdeiActivitati.MainPage"
+             Title="Idei activitati">
 
     <ContentPage.ToolbarItems>
 
-        <ToolbarItem Text="Formular" Order="Secondary" Clicked="Formular_Clicked"/>
+        <ToolbarItem Text="Adauga" Order="Secondary" Clicked="Formular_Clicked"/>
         <ToolbarItem Text="Lista" Order="Secondary" Clicked="Lista_Clicked"/>
+        <ToolbarItem Text="Filtreaza" Order="Secondary" Clicked="Filtru_Clicked"/>
+        <ToolbarItem Text="Grafic" Order="Secondary" Clicked="Grafic_Clicked"/>
+        <ToolbarItem Text="Sugestii" Order="Secondary" Clicked="Sugestii_Clicked"/>
+        <ToolbarItem Text="Despre" Order="Secondary" Clicked="Despre_Clicked"/>
 
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+
+        <Label Margin="15" HorizontalOptions="CenterAndExpand" FontSize="Large" Text="Ramai activ!"></Label>
+        
+        <Image Margin="20" Source="https://mir-s3-cdn-cf.behance.net/projects/404/00fb9579938113.Y3JvcCwxMTk3LDkzNywwLDA.jpg" VerticalOptions="Center"></Image>
+        <Label HorizontalOptions="StartAndExpand" FontSize="Medium" Margin="30, 5, 5, 5" Text="1. Adauga/genereaza o activitate."></Label>
+        <Label HorizontalOptions="StartAndExpand" FontSize="Medium" Margin="30, 5, 5, 5" Text="2. Completeaza activitatea."></Label>
+        <Label HorizontalOptions="StartAndExpand" FontSize="Medium" Margin="30, 5, 5, 5" Text="3. Repeta si nu te vei plictisi niciodata!"></Label>
+
     </StackLayout>
 
 </ContentPage>

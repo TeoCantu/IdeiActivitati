@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Despre"
+             x:Class="IdeiActivitati.DesprePage">
+    
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Margin="10" FontSize="Large" HorizontalOptions="CenterAndExpand">Proiect Programarea Dispozitivelor Mobile - Partea 1</Label>
+        <Grid Margin="10,20,10,15" Padding="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*"/>
+                <RowDefinition Height=".1*"/>
+                <RowDefinition Height=".1*"/>
+                <RowDefinition Height=".1*"/>
+                    <RowDefinition Height=".1*"/>
+
+                    <RowDefinition Height=".1*"/>
+                    <RowDefinition Height=".1*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start" Grid.ColumnSpan="3">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="API-ul folosit poate fi gasit " />
+                        <Span Text="aici"
+                  TextColor="Blue"
+                  TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://www.boredapi.com/" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Text="." />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+                <Label  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Small"  Text="Informatii despre autori:"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" />
+            
+            
+
+                <Label  Grid.Row="2" Grid.Column="0"  FontSize="Small" TextColor="Gray" Text="Cod student"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" />
+                <Label Grid.Row="2" Grid.Column="1"  FontSize="Small" TextColor="Gray" Text="Nume student"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+                <Label  Grid.Row="2" Grid.Column="2"  FontSize="Small" TextColor="Gray" Text="Grupa student"
+                VerticalOptions="Center" 
+                HorizontalOptions="End" />
+            
+            
+
+                <Label  Grid.Row="3" Grid.Column="0"  FontSize="Small"  Text="27011"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" />
+            <Label Grid.Row="3" Grid.Column="1"  FontSize="Small"  Text="Cantu Teodora"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label  Grid.Row="3" Grid.Column="2"  FontSize="Small"  Text="1112"
+                VerticalOptions="Center" 
+                HorizontalOptions="End" />
+
+            <Label Grid.Row="4" Grid.Column="0"  FontSize="Small"  Text="27013"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" />
+            <Label Grid.Row="4" Grid.Column="1"  FontSize="Small"  Text="Ciobanu Laura-Mihaela"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label Grid.Row="4" Grid.Column="2"  FontSize="Small"  Text="1112"
+                VerticalOptions="Center" 
+                HorizontalOptions="End" />
+
+            <Label Grid.Row="5" Grid.Column="0"  FontSize="Small"  Text="27004"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" />
+            <Label Grid.Row="5" Grid.Column="1"  FontSize="Small"  Text="Andronache Nicolae-Iulian"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label Grid.Row="5" Grid.Column="2"  FontSize="Small"  Text="1112"
+                VerticalOptions="Center" 
+                HorizontalOptions="End" />
+
+            <Label Grid.Row="6" Grid.Column="0"  FontSize="Small"  Text="27007"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" />
+            <Label Grid.Row="6" Grid.Column="1"  FontSize="Small"  Text="Bebereche Alexandru-Eugen"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label Grid.Row="6" Grid.Column="2"  FontSize="Small"  Text="1112"
+                VerticalOptions="Center" 
+                HorizontalOptions="End" />
+        </Grid>
+            <Label Margin="10" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" FontSize="Small" Text="2021-2022"></Label>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+
+
+
+</ContentPage>
