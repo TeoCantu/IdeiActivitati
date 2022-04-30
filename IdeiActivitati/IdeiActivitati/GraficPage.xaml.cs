@@ -71,6 +71,7 @@ namespace IdeiActivitati
             dictCosturi.Add("music", 0);
             dictCosturi.Add("busywork", 0);
             dictCosturi.Add("diy", 0);
+            dictCosturi.Add("relaxation", 0);
            
             foreach(Activitate activitate in listaActivitati)
             {
@@ -130,6 +131,7 @@ namespace IdeiActivitati
             dictCosturi.Add("music", 0);
             dictCosturi.Add("busywork", 0);
             dictCosturi.Add("diy", 0);
+            dictCosturi.Add("relaxation", 0);
 
             List<ChartEntry> listaGrafic = new List<ChartEntry>();
 
