@@ -23,9 +23,10 @@ namespace IdeiActivitati
         {
             InitializeComponent();
             this.BindingContext = this;
-            daoActivitate = new DaoActivitate();
+            this.daoActivitate = new DaoActivitate();
             this.httpRequestUrl = httpRequestUrl;
-            AfisareActivitate().GetAwaiter();
+            this.AfisareActivitate().GetAwaiter();
+            this.loadingGrid.IsVisible = true;
         }
 
         public async Task AfisareActivitate()
@@ -35,18 +36,15 @@ namespace IdeiActivitati
                 var json = await new HttpClient().GetStringAsync(this.httpRequestUrl);
                 if (json.Contains("error"))
                 {
-                    this.gridActivitate.IsVisible = false;
-                    this.eroareGrid.IsVisible = true;
-                    this.loadingGrid.IsVisible = false;
+                    this.AfisareEroare();
                 }
                 else
                 {
+                    this.labelTitlu.Text = "Activitate nouă găsită!";
                     this.activitate = JsonConvert.DeserializeObject<Activitate>(json);
                     this.activitate.Data = DateTime.Now;
 
-                    this.gridActivitate.IsVisible = true;
                     this.loadingGrid.IsVisible = false;
-                    this.eroareGrid.IsVisible = false;
 
                     if (this.activitate != null)
                     {
@@ -57,18 +55,24 @@ namespace IdeiActivitati
                     }
                     else
                     {
-                        this.loadingGrid.IsVisible = false;
-                        this.gridActivitate.IsVisible = false;
-                        this.eroareGrid.IsVisible = true;
+                        this.AfisareEroare();
                     }
                 }
             }
             catch
             {
                 this.gridActivitate.IsVisible = false;
-                this.eroareGrid.IsVisible = false;
                 this.loadingGrid.IsVisible = true;
             }
+        }
+
+        private void AfisareEroare()
+        {
+            this.labelTitlu.Text = "Ups..Nicio activitate nu corespunde filtrelor!";
+            this.reincearcaButton.IsVisible = false;
+            this.adaugaActivitateButton.IsVisible = false;
+            this.activitateFrame.IsVisible = false;
+            this.loadingGrid.IsVisible = false;
         }
 
         public string CostAfisat(double cost)

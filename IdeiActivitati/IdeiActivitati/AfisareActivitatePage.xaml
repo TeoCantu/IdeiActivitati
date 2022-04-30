@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IdeiActivitati.AfisareActivitatePage">
     <ContentPage.Content>
-        <Frame  Margin="20"
+        <Frame  Margin="10"
                 CornerRadius="20"
                 BackgroundColor="DodgerBlue">
             <StackLayout Orientation="Vertical">
                 <Grid x:Name="gridActivitate">
-                    <Label Text="Activitate nouă găsită!"
+                    <Label x:Name="labelTitlu"
+                           Text=""
                            Grid.Row="0"
                            TextColor="White"
                            Grid.Column="0"
@@ -18,7 +19,8 @@
                            VerticalOptions="Start"
                            HorizontalOptions="CenterAndExpand" />
 
-                    <Frame BorderColor="DarkBlue"
+                    <Frame x:Name="activitateFrame"
+                           BorderColor="DarkBlue"
                            BackgroundColor="White"
                            Grid.Column="0"
                            Grid.ColumnSpan="2"
@@ -36,7 +38,7 @@
                     </Frame>
 
                     <Label x:Name="TipLabel"
-                           Text="Tip"
+                           Text=""
                            Grid.Row="3"
                            TextColor="White"
                            Grid.Column="0"
@@ -47,7 +49,7 @@
                            HorizontalOptions="CenterAndExpand" />
 
                     <Label x:Name="ParticipantiLabel"
-                           Text="Participanti"
+                           Text=""
                            Grid.Row="4"
                            TextColor="White"
                            Grid.Column="0"
@@ -57,7 +59,7 @@
                            VerticalOptions="Start"
                            HorizontalOptions="CenterAndExpand" />
 
-                    <Label Text="Pret"
+                    <Label Text=""
                            x:Name="PretLabel"
                            Grid.Row="5"
                            TextColor="White"
@@ -104,31 +106,6 @@
                     </StackLayout>
                 </Grid>
 
-                <Grid x:Name="eroareGrid">
-                    <Label Text="Ups.. Nicio activitate nu corespunde filtrelor!"
-                           Grid.Row="2"
-                           TextColor="White"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           FontSize="Small"
-                           Grid.ColumnSpan="2"
-                           VerticalOptions="Start"
-                           HorizontalOptions="CenterAndExpand">
-
-                    </Label>
-                    <Button x:Name="schimbaFiltreButton"
-                            Text="Schimbă filtrele!"
-                            Grid.Column="0"
-                            Grid.Row="4"
-                            Grid.ColumnSpan="2"
-                            FontAttributes="Bold"
-                            BackgroundColor="White"
-                            VerticalOptions="Center"
-                            HorizontalOptions="CenterAndExpand"
-                            CornerRadius="10"
-                            Clicked="schimbaFiltreButton_Clicked">
-                    </Button>
-                </Grid>
                 <Grid x:Name="loadingGrid">
                     <Label Text="Încărcăm datele...."
                            Grid.Row="2"
