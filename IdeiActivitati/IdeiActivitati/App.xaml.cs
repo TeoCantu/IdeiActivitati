@@ -11,8 +11,10 @@ namespace IdeiActivitati
             InitializeComponent();
 
             // aici am pus asa ca sa testez pagina
-            //MainPage = new MainPage();
-            MainPage = new NavigationPage(new FiltruActivitatePage());
+            // MainPage = new DesprePage();
+            MainPage = new NavigationPage(new MainPage());
+            // MainPage = new NavigationPage(new FiltruActivitatePage());
+           // MainPage = new AppShell();
         }
 
         protected override void OnStart()
