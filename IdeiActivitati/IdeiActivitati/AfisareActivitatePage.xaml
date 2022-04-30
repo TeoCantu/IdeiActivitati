@@ -70,12 +70,12 @@
 
                     <StackLayout Orientation="Horizontal"
                                  Grid.Row="6"
-                                 HorizontalOptions="CenterAndExpand"
+                                 Grid.ColumnSpan="2"
                                  Margin="20">
                         <Button x:Name="adaugaActivitateButton"
                                 Text="Activitate realizată!"
                                 VerticalOptions="Center"
-                                HorizontalOptions="CenterAndExpand"
+                                HorizontalOptions="StartAndExpand"
                                 CornerRadius="10"
                                 FontAttributes="Bold"
                                 BackgroundColor="White"
@@ -96,7 +96,7 @@
                                 VerticalOptions="Center"
                                 FontAttributes="Bold"
                                 BackgroundColor="White"
-                                HorizontalOptions="CenterAndExpand"
+                                HorizontalOptions="EndAndExpand"
                                 CornerRadius="10"
                                 Clicked="schimbaFiltreButton_Clicked">
 

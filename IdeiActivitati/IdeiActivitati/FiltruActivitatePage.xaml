@@ -18,12 +18,14 @@
                 <StackLayout Orientation="Horizontal"
                              Margin="20">
                     <Label Text="Tip"
+                           HorizontalOptions="StartAndExpand"
                            FontAttributes="Bold"
                            VerticalOptions="Center" />
 
                     <Picker x:Name="tipPicker"
                             VerticalOptions="Center"
-                            Margin="20" />
+                            WidthRequest="160"
+                            HorizontalOptions="EndAndExpand" />
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical"
@@ -33,11 +35,13 @@
                         <Label  x:Name="CheckBoxParticipantiLabel"
                                 FontAttributes="Bold"
                                 VerticalOptions="Center"
+                                HorizontalOptions="StartAndExpand"
                                 Text="Număr specific de participanți:">
                         </Label>
 
                         <CheckBox x:Name="CheckBoxParticipanti"
                                   VerticalOptions="Center"
+                                  HorizontalOptions="EndAndExpand"
                                   CheckedChanged="CheckBoxParticipanti_CheckedChanged" />
                     </StackLayout>
 
@@ -47,6 +51,7 @@
                         <Label x:Name="ParticipantiLabel"
                                Margin="20"
                                IsVisible="false"
+                               HorizontalOptions="CenterAndExpand"
                                FontSize="Micro"
                                Text="Participanți: " />
 
@@ -55,6 +60,7 @@
                                  IsVisible="false"
                                  x:Name="stepper"
                                  Increment="1"
+                                 HorizontalOptions="CenterAndExpand"
                                  ValueChanged="stepper_ValueChanged" />
 
                     </StackLayout>
@@ -64,11 +70,13 @@
                              Margin="20">
                     <Label Text="Activitate Gratuită"
                            FontAttributes="Bold"
+                           HorizontalOptions="StartAndExpand"
                            VerticalOptions="Center" />
 
                     <CheckBox x:Name="GratuitCheckBox"
                               VerticalOptions="Center"
-                              Margin="25" />
+                              HorizontalOptions="EndAndExpand" />
+
                 </StackLayout>
 
                 <Button Text="Caută"
