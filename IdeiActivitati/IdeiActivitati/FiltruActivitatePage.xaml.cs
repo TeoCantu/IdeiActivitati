@@ -24,7 +24,7 @@ namespace IdeiActivitati
             BindingContext = this;
             this.tipuriActivitati = Enum.GetNames(typeof(TipActivitate));
             this.tipPicker.ItemsSource = tipuriActivitati;
-            this.ParticipantiLabel.Text = "Număr de participanți: " + this.NumarParticipanti.ToString();
+            this.ParticipantiLabel.Text = "Participanți: " + this.NumarParticipanti.ToString();
         }
 
         private void GasesteButton_Clicked(object sender, EventArgs e)
@@ -37,24 +37,67 @@ namespace IdeiActivitati
         private void GenereazaLink()
         {
             this.httpRequestUrl = "http://www.boredapi.com/api/activity";
+            var isFirstParameter = true;
 
-            this.httpRequestUrl += $"?participants={this.NumarParticipanti}";
+            if (CheckBoxParticipanti.IsChecked)
+            {
+                if (isFirstParameter)
+                {
+                    this.httpRequestUrl += $"?participants={this.NumarParticipanti}";
+                    isFirstParameter = false;
+                }
+                else
+                {
+                    this.httpRequestUrl += $"&participants={this.NumarParticipanti}";
+                }
+            }
 
             if (this.tipPicker.SelectedItem != null)
             {
-                this.httpRequestUrl += $"&type={this.tipPicker.SelectedItem}";
+                if (isFirstParameter)
+                {
+                    this.httpRequestUrl += $"?type={this.tipPicker.SelectedItem}";
+                    isFirstParameter = false;
+                }
+                else
+                {
+                    this.httpRequestUrl += $"&type={this.tipPicker.SelectedItem}";
+                }
             }
 
-            if (this.CheckBox.IsChecked)
+            if (this.GratuitCheckBox.IsChecked)
             {
-                this.httpRequestUrl += "&price=0.0";
+
+                if (isFirstParameter)
+                {
+                    this.httpRequestUrl += "?price=0.0";
+                    isFirstParameter = false;
+                }
+                else
+                {
+                    this.httpRequestUrl += "&price=0.0";
+                }
             }
         }
 
         private void stepper_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             this.NumarParticipanti = Int32.Parse(e.NewValue.ToString());
-            this.ParticipantiLabel.Text = "Număr de participanți: " + this.NumarParticipanti.ToString();
+            this.ParticipantiLabel.Text = "Participanți: " + this.NumarParticipanti.ToString();
+        }
+
+        private void CheckBoxParticipanti_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (e.Value)
+            {
+                this.ParticipantiLabel.IsVisible = true;
+                this.stepper.IsVisible = true;
+            }
+            else
+            {
+                this.ParticipantiLabel.IsVisible = false;
+                this.stepper.IsVisible = false;
+            }
         }
     }
 }

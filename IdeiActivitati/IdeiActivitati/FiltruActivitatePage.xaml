@@ -6,85 +6,79 @@
         <Frame Margin="20"
                CornerRadius="20"
                BackgroundColor="LightSkyBlue">
-            <Grid>
+            <StackLayout>
 
                 <Label Text="Găsește o nouă activitate!"
-                       Grid.Row="1"
                        TextColor="White"
-                       Grid.Column="0"
+                       HorizontalOptions="CenterAndExpand"
                        FontAttributes="Bold"
                        FontSize="Medium"
-                       Grid.ColumnSpan="2"
-                       VerticalOptions="Start"
-                       HorizontalOptions="CenterAndExpand" />
+                       Margin="30" />
 
-                <StackLayout  Grid.Row="2"
-                              Grid.ColumnSpan="2"
-                              HorizontalOptions="CenterAndExpand"
-                              VerticalOptions="CenterAndExpand"
-                              Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal"
+                             Margin="20">
                     <Label Text="Tip"
                            FontAttributes="Bold"
-                           Margin="40"
-                           VerticalOptions="Center"
-                           HorizontalOptions="Start" />
+                           VerticalOptions="Center" />
 
                     <Picker x:Name="tipPicker"
-                            Margin="20"
                             VerticalOptions="Center"
-                            HorizontalOptions="End" />
+                            Margin="20" />
                 </StackLayout>
 
-                <StackLayout Grid.Row="3"
-                             Grid.ColumnSpan="2"
-                             HorizontalOptions="CenterAndExpand"
-                             VerticalOptions="CenterAndExpand"
-                             Orientation="Horizontal">
+                <StackLayout Orientation="Vertical"
+                             Margin="20">
 
-                    <Label x:Name="ParticipantiLabel"
-                           FontAttributes="Bold"
-                           Margin="20"
-                           Text="Număr de participanți: "
-                           VerticalOptions="Center"
-                           HorizontalOptions="Start" />
+                    <StackLayout Orientation="Horizontal">
+                        <Label  x:Name="CheckBoxParticipantiLabel"
+                                FontAttributes="Bold"
+                                VerticalOptions="Center"
+                                Text="Număr specific de participanți:">
+                        </Label>
 
-                    <Stepper Minimum="1"
-                             Maximum="5"
-                             x:Name="stepper"
-                             Increment="1"
-                             VerticalOptions="Center"
-                             HorizontalOptions="End"
-                             ValueChanged="stepper_ValueChanged" />
+                        <CheckBox x:Name="CheckBoxParticipanti"
+                                  VerticalOptions="Center"
+                                  CheckedChanged="CheckBoxParticipanti_CheckedChanged" />
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Horizontal">
+
+                        <Label x:Name="ParticipantiLabel"
+                               Margin="20"
+                               IsVisible="false"
+                               FontSize="Micro"
+                               Text="Participanți: " />
+
+                        <Stepper Minimum="1"
+                                 Maximum="5"
+                                 IsVisible="false"
+                                 x:Name="stepper"
+                                 Increment="1"
+                                 ValueChanged="stepper_ValueChanged" />
+
+                    </StackLayout>
                 </StackLayout>
 
-                <StackLayout  Grid.Row="4"
-                              Grid.ColumnSpan="2"
-                              HorizontalOptions="CenterAndExpand"
-                              VerticalOptions="CenterAndExpand"
-                              Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal"
+                             Margin="20">
                     <Label Text="Activitate Gratuită"
                            FontAttributes="Bold"
-                           Margin="20"
-                           VerticalOptions="CenterAndExpand"
-                           HorizontalOptions="CenterAndExpand" />
+                           VerticalOptions="Center" />
 
-                    <CheckBox x:Name="CheckBox"
-                              Margin="25"
-                              VerticalOptions="CenterAndExpand"
-                              HorizontalOptions="CenterAndExpand" />
+                    <CheckBox x:Name="GratuitCheckBox"
+                              VerticalOptions="Center"
+                              Margin="25" />
                 </StackLayout>
 
-                <Button Grid.Row="5"
-                        Grid.Column="0"
-                        Text="Caută"
+                <Button Text="Caută"
                         CornerRadius="20"
                         FontAttributes="Bold"
-                        Grid.ColumnSpan="2"
                         BackgroundColor="FloralWhite"
                         VerticalOptions="CenterAndExpand"
                         Clicked="GasesteButton_Clicked"
                         HorizontalOptions="Fill" />
-            </Grid>
+            </StackLayout>
         </Frame>
     </ContentPage.Content>
 </ContentPage>
