@@ -37,30 +37,45 @@ namespace IdeiActivitati
             BindingContext = this;
             pickerTipActivitate.ItemsSource = lista;
             daoActivitate = new DaoActivitate();
+            datePickerData.Date = DateTime.Now;
         }
         protected override async void OnAppearing()
         {
-            base.OnAppearing();
-
-            
+            base.OnAppearing();   
         }
 
         public void Adaugare_Clicked(object sender, EventArgs e)
         {
-            Activitate activitate = new Activitate()
+            int i=-1;
+            int j;
+            bool boolParticipanti = Int32.TryParse(entryNrPersoane.Text, out i);
+            bool boolCost = Int32.TryParse(entryCost.Text, out j);
+            if (entryDescriere.Text == null || boolParticipanti == false || i<0 || boolCost ==false || pickerTipActivitate.SelectedItem==null)
             {
-                Descriere = DescriereActivitate,
-                Tip = TipulActivitatii,
-                Participanti = NrPersoane,
-                Cost = CostActivitate,
-                Data = DataActivitate,
-                DetaliiSuplimentare = DetaliiSuplimentareActivitate
-            };
+                DisplayAlert("Atentie!", "Completati corespunzator toate campurile", "OK");
+            } else
+            {
+                Activitate activitate = new Activitate()
+                {
+                    Descriere = DescriereActivitate,
+                    Tip = TipulActivitatii,
+                    Participanti = NrPersoane,
+                    Cost = CostActivitate,
+                    Data = DataActivitate,
+                    DetaliiSuplimentare = DetaliiSuplimentareActivitate
+                };
 
-            daoActivitate.AdaugaActivitate(activitate);
-            Console.WriteLine("e ok doamne ajuta");
-            DisplayAlert("Succes!", "Obiect adaugat", "OK");
+                daoActivitate.AdaugaActivitate(activitate);
+                DisplayAlert("Succes!", "Obiect adaugat", "OK");
 
+                entryDescriere.Text = null;
+                pickerTipActivitate.SelectedItem = null;
+                entryNrPersoane.Text = "0";
+                entryCost.Text = "0";
+                datePickerData.Date = DateTime.Now;
+                entryDetaliiSuplimentare.Text = null;
+
+            }
         }
     }
 }

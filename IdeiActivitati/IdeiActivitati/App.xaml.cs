@@ -12,8 +12,6 @@ namespace IdeiActivitati
 
            
             MainPage = new NavigationPage(new MainPage());
-            // MainPage = new NavigationPage(new FiltruActivitatePage());
-           // MainPage = new AppShell();
         }
 
         protected override void OnStart()
